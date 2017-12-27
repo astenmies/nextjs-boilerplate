@@ -5,6 +5,9 @@ const path = require('path')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
+
+    assetPrefix: process.env.CDN_URL ? process.env.CDN_URL : '',
+
     webpack: (config) => {
         config.plugins = config.plugins || []
 
