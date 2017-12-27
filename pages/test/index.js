@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import Page from '../../components/layouts'
+import Page from '~/components/layouts'
 
 
 const Title = styled.h1`
