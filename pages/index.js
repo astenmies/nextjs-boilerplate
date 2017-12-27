@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import Page from '../components/layouts/sample'
 
 
 const Title = styled.h1`
@@ -9,10 +10,10 @@ const Title = styled.h1`
 `
 
 export default () => (
-    <div>
+    <Page>
         <Title>My page</Title>
         <ul>
             <li><Link href='/test/index' as='/test/index'><a>test-index</a></Link></li>
         </ul>
-    </div>
+    </Page>
 )
