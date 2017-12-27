@@ -2,5 +2,5 @@ import Link from 'next/link'
 
 export default () => <div>
     this is a <br/>
-    <Link href='/index'><a>index</a></Link>
+    <Link href='/test/index'><a>test/index</a></Link>
 </div>
