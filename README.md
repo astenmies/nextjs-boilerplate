@@ -67,4 +67,5 @@ server.use(koaConnect(compression()));
 使用 server-koa 作為後端
 
 
-@前致詞
+[babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import)
+~前致詞

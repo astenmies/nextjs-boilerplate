@@ -2,9 +2,9 @@
   "name": "custom-server-koa",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node server/index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server/index.js"
   },
   "dependencies": {
     "babel-plugin-root-import": "^5.1.0",
