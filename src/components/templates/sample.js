@@ -16,9 +16,9 @@ export default ({ children, title = 'Sample' }) => (
         </Head>
         <header>
             <nav>
-                <Link href='/'><a>Home</a></Link> |
-                <Link href='/about'><a>About</a></Link> |
-                <Link href='/contact'><a>Contact</a></Link>
+                <Link href='/test'><a>Home</a></Link> |
+                <Link href='/test/a'><a>a</a></Link> |
+                <Link href='/test/b'><a>b</a></Link>
             </nav>
         </header>
 

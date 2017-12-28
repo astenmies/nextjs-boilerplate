@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Page from '@layouts/sample'
+import Page from '@templates'
 
 
 export default () => <Page>

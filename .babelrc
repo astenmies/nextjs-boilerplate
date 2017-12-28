@@ -14,7 +14,7 @@
       },
       {
         "rootPathPrefix": "@templates",
-        "rootPathSuffix": "src/components/template"
+        "rootPathSuffix": "src/components/templates"
       },
       {
         "rootPathPrefix": "@molecules",
