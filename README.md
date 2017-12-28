@@ -38,7 +38,6 @@ $ docker-compose down
 │      ├── organisms                            # 組織 (分子 + 分子 or + 分子)
 │      ├── template                             # 樣版
 │      ├── pages                                # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
-├── pages                                        # Next Pages
 ├── server                                      # Node 服務設定
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
@@ -47,6 +46,11 @@ $ docker-compose down
 └── docker-compose.yml.sample                   # Docker Compose 部屬設定檔
 ```
 
+### Next.js Pages 路徑設定
+ 
+ next.config.js
+ 
+`const app = next({ dir: './src/components',dev })`
 
 
 ## How to use
