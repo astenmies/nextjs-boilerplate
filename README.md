@@ -34,12 +34,12 @@ $ docker-compose down
 ```
 .
 ├── src                                         # App source code
-│   └─ components                               # 組件庫
-│      ├── atoms                                # 元子 (最小的元件)
-│      ├── molecules                            # 分子 (元子 + 元子)
-│      ├── organisms                            # 組織 (分子 + 分子 or + 分子)
-│      ├── template                             # 樣版
-│      ├── pages                                # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+│   ├─ components                               # 組件庫
+│   │  ├── atoms                                # 元子 (最小的元件)
+│   │  ├── molecules                            # 分子 (元子 + 元子)
+│   │  ├── organisms                            # 組織 (分子 + 分子 or + 分子)
+│   │  ├── template                             # 樣版
+│   └─ pages                                    # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
 ├── server                                      # Node 服務設定
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
