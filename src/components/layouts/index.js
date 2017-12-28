@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
-// import Header from '~/components/'
+import Header from '~/components/organisms/Header'
 
 export default ({ children, title = 'IPay' }) => (
     <div>
@@ -16,6 +16,7 @@ export default ({ children, title = 'IPay' }) => (
 
         </Head>
 
+        <Header></Header>
 
         { children }
 

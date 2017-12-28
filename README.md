@@ -1,6 +1,53 @@
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/zeit/next.js/tree/master/examples/custom-server-koa)
+# iPay存款平台
 
-# Custom Koa Server example
+
+## Features
+
+* [JQuery 2.1.4] (https://jquery.com/download/) JavaScript Library
+* [ReactJS 16.2] (https://reactjs.org/) JavaScript Framework
+* [NextJs 4.2.1] (https://github.com/zeit/next.js/) ReactJS with SSR Framework
+* [Bootstrap 4.0.0-beta.2](http://bootstrap.hexschool.com/docs/4.0/components/popovers/) CSS Framework
+* [Webpack](https://webpack.github.io/) Module bundler
+* [koa](https://github.com/koajs/koa) Expressive HTTP middleware framework for node.js
+
+
+
+## 部屬環境
+
+將 docker-compose.yml.sample 複製為 docker-compose.yml
+根據需求更改 APP_ENV 來決定環境別（正式 production, 測試 sandbox, 開發 develop）
+
+```
+啟動 (加上 -d 可常駐背景執行)
+$ docker-compose up
+
+關閉
+$ docker-compose down
+```
+
+
+## App Structure
+
+
+```
+.
+├── src                                         # App source code
+│   └─ components                               # 組件庫
+│      ├── atoms                                # 元子 (最小的元件)
+│      ├── molecules                            # 分子 (元子 + 元子)
+│      ├── organisms                            # 組織 (分子 + 分子 or + 分子)
+│      ├── template                             # 樣版
+│      ├── pages                                # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+├── pages                                        # Next Pages
+├── server                                      # Node 服務設定
+├── .next.config.js                             # Next設定&Webpack設定檔
+├── .babelrc                                    # Babel設定檔
+├── .gitignore                                  # Git版控過濾項目設定檔
+├── .gitlab-ci.yml                              # GITLAB-CI 持續整合測試設定檔
+└── docker-compose.yml.sample                   # Docker Compose 部屬設定檔
+```
+
+
 
 ## How to use
 
@@ -17,21 +64,6 @@ Install it and run:
 npm install
 npm run dev
 ```
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
-
-```bash
-now
-```
-
-## The idea behind the example
-
-Most of the times the default Next server will be enough but sometimes you want to run your own server to customize routes or other kind of the app behavior. Next provides a [Custom server and routing](https://github.com/zeit/next.js#custom-server-and-routing) so you can customize as much as you want.
-
-Because the Next.js server is just a node.js module you can combine it with any other part of the node.js ecosystem. in this case we are using [Koa](http://koajs.com/) to build a custom router on top of Next.
-
-The example shows a server that serves the component living in `pages/a.js` when the route `/b` is requested and `pages/b.js` when the route `/a` is accessed. This is obviously a non-standard routing strategy. You can see how this custom routing is being made inside `server.js`.
-
 
 ## Side note: Enabling gzip compression
 
@@ -52,24 +84,16 @@ server.use(koaConnect(compression()));
 
 ## Use Example
 
-[with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern)
+[with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern) 使用 webpack-env
 
-使用 webpack-env
+[with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) 使用 css in js : styled-components
 
+[custom-server-koa](https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa) 使用 server-koa 作為後端
 
-[with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components)
+[babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import) ~前致詞 
 
-使用 css in js : styled-components
+[ANT Mobile Design](https://mobile.ant.design/) Ant UI Plugin
 
+[with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile) Ant UI Plugin By Mobile
 
-[custom-server-koa](https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa)
-
-使用 server-koa 作為後端
-
-
-[babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import)
-~前致詞
-
-
-[ANT Mobile Design](https://mobile.ant.design/)
-[with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile)
+[arc](https://github.com/diegohaz/arc) 參考原子設計
