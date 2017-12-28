@@ -7,10 +7,22 @@
   ],
   "plugins": [
     ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
-    ["babel-plugin-root-import", [
+    ["babel-root-import", [
       {
-        "rootPathPrefix": "~",
-        "rootPathSuffix": "src"
+        "rootPathPrefix": "@atoms",
+        "rootPathSuffix": "src/components/atoms"
+      },
+      {
+        "rootPathPrefix": "@templates",
+        "rootPathSuffix": "src/components/template"
+      },
+      {
+        "rootPathPrefix": "@molecules",
+        "rootPathSuffix": "src/components/molecules"
+      },
+      {
+        "rootPathPrefix": "@organisms",
+        "rootPathSuffix": "src/components/organisms"
       }
     ]]
   ]

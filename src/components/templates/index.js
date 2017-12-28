@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import Header from '~/components/organisms/Header'
+import Header from '@organisms/Header'
 
 export default ({ children, title = 'IPay' }) => (
     <div>

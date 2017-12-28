@@ -38,7 +38,7 @@ $ docker-compose down
 │   │  ├── atoms                                # 元子 (最小的元件)
 │   │  ├── molecules                            # 分子 (元子 + 元子)
 │   │  ├── organisms                            # 組織 (分子 + 分子 or + 分子)
-│   │  ├── template                             # 樣版
+│   │  ├── templates                            # 樣版
 │   └─ pages                                    # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
 ├── server                                      # Node 服務設定
 ├── .next.config.js                             # Next設定&Webpack設定檔
@@ -48,12 +48,31 @@ $ docker-compose down
 └── docker-compose.yml.sample                   # Docker Compose 部屬設定檔
 ```
 
-### Next.js Pages 路徑設定
+### 路徑設定
  
- next.config.js
  
-`const app = next({ dir: './src/components',dev })`
+#### next.js pages path
 
+in next.config.js
+
+```
+const app = next({ dir: './src/components',dev })
+```
+
+#### next.config.js
+
+in .babelrc
+
+| alias name | real path                  |
+| ---------- | -------------------------- |
+| @atoms     | src/components/atoms       |
+| @templates | src/components/templates   |
+| @molecules | src/components/molecules   |
+| @organisms | src/components/organisms   |
+ 
+PS: webpack.config.js by webstorm alias
+
+ 
 
 ## How to use
 
