@@ -3,13 +3,15 @@
 
 ## Features
 
-* [JQuery 2.1.4] (https://jquery.com/download/) JavaScript Library
-* [ReactJS 16.2] (https://reactjs.org/) JavaScript Framework
-* [NextJs 4.2.1] (https://github.com/zeit/next.js/) ReactJS with SSR Framework
+* [JQuery 2.1.4](https://jquery.com/download/) JavaScript Library
+* [ReactJS 16.2](https://reactjs.org/) JavaScript Framework
+* [NextJs 4.2.1](https://github.com/zeit/next.js/) ReactJS with SSR Framework
 * [Bootstrap 4.0.0-beta.2](http://bootstrap.hexschool.com/docs/4.0/components/popovers/) CSS Framework
 * [Webpack](https://webpack.github.io/) Module bundler
-* [koa](https://github.com/koajs/koa) Expressive HTTP middleware framework for node.js
-
+* [custom-server-koa](https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa) Expressive HTTP middleware framework for node.js
+* [with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern) ENV dev Setting
+* [with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) CSS in JS
+* [babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import) Impot Prefix 
 
 
 ## 部屬環境
@@ -86,15 +88,7 @@ server.use(koaConnect(compression()));
 ```
 
 
-## Use Example
-
-[with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern) 使用 webpack-env
-
-[with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) 使用 css in js : styled-components
-
-[custom-server-koa](https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa) 使用 server-koa 作為後端
-
-[babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import) ~前致詞 
+## Other Example
 
 [ANT Mobile Design](https://mobile.ant.design/) Ant UI Plugin
 
