@@ -146,3 +146,5 @@ server.use(koaConnect(compression()));
 [with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile) Ant UI Plugin By Mobile
 
 [arc](https://github.com/diegohaz/arc) 參考原子設計
+
+[Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
