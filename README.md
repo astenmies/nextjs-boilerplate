@@ -38,8 +38,9 @@ $ docker-compose down
 │   │  ├── atoms                                # 元子 (最小的元件)
 │   │  ├── molecules                            # 分子 (元子 + 元子)
 │   │  ├── organisms                            # 組織 (分子 + 分子 or + 分子)
-│   │  ├── templates                            # 樣版
-│   └─ pages                                    # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+│   │  └── templates                            # 樣版
+│   ├─ pages                                    # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+│   └─ static                                   # 靜態資源路徑
 ├── server                                      # Node 服務設定
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
@@ -59,7 +60,9 @@ in next.config.js
 const app = next({ dir: './src/components',dev })
 ```
 
-#### next.config.js
+#### import alias
+
+可以省去相對路徑 ../../ 的麻煩
 
 in .babelrc
 
@@ -73,6 +76,35 @@ in .babelrc
 PS: webpack.config.js by webstorm alias
 
  
+#### root-static-files
+
+把指定檔案放在網址根目錄 (SSL驗證 或 Google Analytics驗證 會需要放置檔案在根目錄下)
+ 
+參考 https://github.com/zeit/next.js/tree/master/examples/root-static-files
+
+in server/index.js
+
+
+```
+server.use(async (ctx, next) => {
+
+    const parsedUrl = parse(ctx.req.url, true)
+    const rootStaticFiles = [
+        '/robots.txt',
+        '/sitemap.xml',
+        '/favicon.ico'
+    ]
+    if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
+        const filePath = path.join(__dirname, '../src/static', parsedUrl.pathname);
+        app.serveStatic(ctx.req, ctx.res, filePath)
+    }
+
+
+    ctx.res.statusCode = 200
+    await next()
+})
+```
+
 
 ## How to use
 
