@@ -8,10 +8,11 @@
 * [NextJs 4.2.1](https://github.com/zeit/next.js/) ReactJS with SSR Framework
 * [Bootstrap 4.0.0-beta.2](http://bootstrap.hexschool.com/docs/4.0/components/popovers/) CSS Framework
 * [Webpack](https://webpack.github.io/) Module bundler
-* [custom-server-koa](https://github.com/zeit/next.js/tree/canary/examples/custom-server-koa) Expressive HTTP middleware framework for node.js
+* [express](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express) Web 應用程式 Express 是最小又靈活的 Node.js Web 應用程式架構，為 Web 與行動式應用程式提供一組健全的特性
 * [with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern) ENV dev Setting
 * [with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) CSS in JS
 * [babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import) Impot Prefix 
+* [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 
 
 ## 部屬環境
@@ -34,14 +35,20 @@ $ docker-compose down
 ```
 .
 ├── src                                         # App source code
-│   ├─ components                               # 組件庫
-│   │  ├── atoms                                # 元子 (最小的元件)
-│   │  ├── molecules                            # 分子 (元子 + 元子)
-│   │  ├── organisms                            # 組織 (分子 + 分子 or + 分子)
-│   │  └── templates                            # 樣版
-│   ├─ pages                                    # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
-│   └─ static                                   # 靜態資源路徑
-├── server                                      # Node 服務設定
+│   ├── components                              # 組件庫
+│   │   ├── atoms                               # 元子 (最小的元件)
+│   │   ├── molecules                           # 分子 (元子 + 元子)
+│   │   ├── organisms                           # 組織 (分子 + 分子 or + 分子)
+│   │   └── templates                           # 樣版
+│   └── i18n                                    # 多國語系的使用方法
+├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+├── static                                      # 靜態資源路徑
+│   ├── locales                                 # 多國語系設定檔案
+│   │   └── en                                  # 英文
+│   │       └── common.json                     # 通用字典檔
+│   ├── favicon.ico                             # 網站圖標
+│   └── robots.txt                              # Google SEO過濾設定
+├── server.js                                   # Node 服務設定
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
 ├── .gitignore                                  # Git版控過濾項目設定檔
@@ -57,7 +64,7 @@ $ docker-compose down
 in next.config.js
 
 ```
-const app = next({ dir: './src/components',dev })
+const app = next({ dir: './',dev })
 ```
 
 #### import alias
@@ -82,26 +89,25 @@ PS: webpack.config.js by webstorm alias
  
 參考 https://github.com/zeit/next.js/tree/master/examples/root-static-files
 
-in server/index.js
+in server.js
 
 
 ```
-server.use(async (ctx, next) => {
+// use next.js
+server.get('*', (req, res) => {
 
-    const parsedUrl = parse(ctx.req.url, true)
+    const parsedUrl = parse(req.url, true)
     const rootStaticFiles = [
         '/robots.txt',
         '/sitemap.xml',
         '/favicon.ico'
     ]
     if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
-        const filePath = path.join(__dirname, '../src/static', parsedUrl.pathname);
-        app.serveStatic(ctx.req, ctx.res, filePath)
+        app.serveStatic(req, res, path.join(__dirname, 'static', parsedUrl.pathname))
+    } else {
+        return handle(req, res)
     }
 
-
-    ctx.res.statusCode = 200
-    await next()
 })
 ```
 
@@ -111,31 +117,14 @@ server.use(async (ctx, next) => {
 Download the example [or clone the repo](https://github.com/zeit/next.js):
 
 ```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/master | tar -xz --strip=2 next.js-master/examples/custom-server-koa
-cd custom-server-koa
+git clone ssh://git@192.168.92.249:10022/yc-frontend/171228-ipay.git
 ```
 
 Install it and run:
 
 ```bash
-npm install
-npm run dev
-```
-
-## Side note: Enabling gzip compression
-
-The most common Koa middleware for handling the gzip compression is [compress](https://github.com/koajs/compress), but unfortunately it is currently not compatible with Next.  
-`koa-compress` handles the compression of the response body by checking `res.body`, which will be empty in the case of the routes handled by Next (because Next sends and ends the response by itself). 
-
-If you need to enable the gzip compression, the most simple way to do so is by wrapping the express-middleware [compression](https://github.com/expressjs/compression) with [koa-connect](https://github.com/vkurchatkin/koa-connect):  
-
-```javascript
-const compression = require('compression');
-const koaConnect = require('koa-connect');
-
-
-server.use(koaConnect(compression()));
-
+yarn
+yarn dev 
 ```
 
 

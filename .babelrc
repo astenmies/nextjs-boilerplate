@@ -23,7 +23,12 @@
       {
         "rootPathPrefix": "@organisms",
         "rootPathSuffix": "src/components/organisms"
+      },
+      {
+        "rootPathPrefix": "@i18n",
+        "rootPathSuffix": "src/i18n"
       }
+
     ]]
   ]
 }
