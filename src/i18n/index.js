@@ -10,8 +10,8 @@ const options = {
     ns: ['common'],
     defaultNS: 'common',
 
-    debug: true,
-    saveMissing: true,
+    debug: process.env.I18N_DEBUG || false,
+    saveMissing: process.env.NODE_ENV !== 'production',
 
     interpolation: {
         escapeValue: false, // not needed for react!!
