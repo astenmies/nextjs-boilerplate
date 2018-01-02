@@ -2,15 +2,18 @@ const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
 const LanguageDetector = require('i18next-browser-languagedetector')
 
+
 const options = {
     fallbackLng: 'en',
-    load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
+    load: 'all', // languageOnly: en, de, all: en-US, de-DE
 
     // have a common namespace used around the full app
     ns: ['common'],
     defaultNS: 'common',
 
-    debug: process.env.I18N_DEBUG || false,
+
+
+    debug: process.env.I18N_DEBUG === 'true',
     saveMissing: process.env.NODE_ENV !== 'production',
 
     interpolation: {

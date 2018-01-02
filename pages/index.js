@@ -13,7 +13,7 @@ function Home ({ t,i18n }) {
                 <p>{t('common:integrates_react-i18next')}</p>
                 <Link href='/about'><a>{t('link.gotoPage2')}2</a></Link>
                 <button
-                    onClick={() => { i18n.changeLanguage('zh'); }}>{t('chinese')}
+                    onClick={() => { i18n.changeLanguage('zh-TW'); }}>{t('chinese')}
                 </button>
                 <button
                     onClick={() => { i18n.changeLanguage('en'); }}>{t('english')}
