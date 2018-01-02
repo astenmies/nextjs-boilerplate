@@ -2,9 +2,9 @@
   "name": "ipay",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server/index.js",
+    "dev": "node server",
     "build": "next build",
-    "start": "NODE_ENV=production node server/index.js"
+    "start": "NODE_ENV=production node server"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.4.0",
@@ -17,14 +17,18 @@
     "classnames": "^2.2.5",
     "dotenv": "^4.0.0",
     "dotenv-webpack": "^1.5.4",
+    "express": "^4.16.2",
+    "i18next": "^10.2.2",
+    "i18next-browser-languagedetector": "^2.1.0",
+    "i18next-express-middleware": "^1.0.9",
+    "i18next-node-fs-backend": "^1.0.0",
+    "i18next-xhr-backend": "^1.5.0",
     "immutable": "^3.8.2",
     "jquery": "^3.2.1",
-    "koa": "^2.0.1",
-    "koa-router": "^7.1.0",
-    "koa-static": "^4.0.2",
     "next": "^4.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-i18next": "^7.3.0",
     "styled-components": "^2.4.0"
   }
 }
