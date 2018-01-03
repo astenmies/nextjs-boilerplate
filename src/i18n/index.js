@@ -14,17 +14,10 @@ const options = {
     ns: ['common'],
     defaultNS: 'common',
 
-    //
+    // setting cookie
     detection: {
-        // order: ['querystring', 'cookie', 'header'],
-        // // keys or params to lookup language from
-        // lookupQuerystring: 'lang',
         lookupCookie: 'i18next',
-        // cache user language
         caches: ['cookie'], // ['cookie']
-        // optional expire and domain for set cookie
-        // cookieDomain: 'localhost',
-
     },
 
     debug: process.env.I18N_DEBUG === 'true',

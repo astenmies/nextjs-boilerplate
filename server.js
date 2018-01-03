@@ -31,14 +31,9 @@ i18n
         defaultNS: 'common',
         load: 'currentOnly', // language codes to lookup, given set language is 'en-US': 'all' --> ['en-US', 'en', 'dev'], 'currentOnly' --> 'en-US', 'languageOnly' --> 'en'
         detection: {
-            // order: ["localStorage", "navigator"],
-            lookupLocalStorage: 'i18nextLng',
             order: ['querystring', 'cookie', 'header'],
             lookupQuerystring: "lang",
-            lookupCookie: 'i18next',
-            // cache user language
             caches: false, // ['cookie']
-            // cookieDomain: 'localhost',
         },
         backend: {
             loadPath: path.join(__dirname, './static/locales/{{lng}}/{{ns}}.json'),
