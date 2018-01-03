@@ -11,7 +11,7 @@
 * [express](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express) Web 應用程式 Express 是最小又靈活的 Node.js Web 應用程式架構，為 Web 與行動式應用程式提供一組健全的特性
 * [with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern) ENV dev Setting
 * [with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) CSS in JS
-* [babel-plugin-root-import](https://github.com/entwicklerstube/babel-plugin-root-import) Impot Prefix 
+* [with-absolute-imports](https://github.com/zeit/next.js/tree/canary/examples/with-absolute-imports) Import Prefix 
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 
 
@@ -65,15 +65,15 @@ $ docker-compose logs -f
 │   │   ├── molecules                           # 分子 (元子 + 元子)
 │   │   ├── organisms                           # 組織 (分子 + 分子 or + 分子)
 │   │   └── templates                           # 樣版
-│   └── i18n                                    # 多國語系的使用方法
-├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
-├── static                                      # 靜態資源路徑
-│   ├── locales                                 # 多國語系設定檔案
-│   │   └── en                                  # 英文
-│   │       └── common.json                     # 通用字典檔
-│   ├── favicon.ico                             # 網站圖標
-│   └── robots.txt                              # Google SEO過濾設定
-├── server.js                                   # Node 服務設定
+│   ├── pages                                   # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+│   ├── static                                  # 靜態資源路徑
+│   │   ├── locales                             # 多國語系設定檔案
+│   │   │   └── en                              # 英文
+│   │   │       └── common.json                 # 通用字典檔
+│   │   ├── favicon.ico                         # 網站圖標
+│   │   └── robots.txt                          # Google SEO過濾設定
+│   ├── server.js                               # Node 服務設定
+│   └── i18next                                 # 多國語系的使用方法
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
 ├── .gitignore                                  # Git版控過濾項目設定檔
@@ -104,6 +104,7 @@ in .babelrc
 | @templates | src/components/templates   |
 | @molecules | src/components/molecules   |
 | @organisms | src/components/organisms   |
+| @i18next   | src/i18next                |
  
 PS: webpack.config.js by webstorm alias
 
@@ -178,5 +179,7 @@ export default Extended
 - [with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile) Ant UI Plugin By Mobile
 - [arc](https://github.com/diegohaz/arc) 參考原子設計
 - [Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
-- [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)
+- [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)c
 - [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
+- [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
+- [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料

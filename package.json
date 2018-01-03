@@ -2,18 +2,18 @@
   "name": "ipay",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server",
+    "dev": "node ./src/server",
     "build": "next build",
-    "start": "NODE_ENV=production node server"
+    "start": "NODE_ENV=production node ./src/server"
   },
   "dependencies": {
+    "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-styled-components": "^1.4.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
-    "babel-root-import": "vikfroberg/babel-root-import",
     "classnames": "^2.2.5",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
