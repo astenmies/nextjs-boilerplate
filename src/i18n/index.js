@@ -1,17 +1,27 @@
 const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
 const LanguageDetector = require('i18next-browser-languagedetector')
+const cookieParser = require('cookie-parser')
+
+//Configuration options
+// https://www.i18next.com/configuration-options.html
 
 const options = {
-    fallbackLng: 'en',
-    load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
+    fallbackLng: 'en-US',
+    load: 'currentOnly', // language codes to lookup, given set language is 'en-US': 'all' --> ['en-US', 'en', 'dev'], 'currentOnly' --> 'en-US', 'languageOnly' --> 'en'
 
     // have a common namespace used around the full app
     ns: ['common'],
     defaultNS: 'common',
 
-    debug: true,
-    saveMissing: true,
+    // setting cookie
+    detection: {
+        lookupCookie: 'i18next',
+        caches: ['cookie'], // ['cookie']
+    },
+
+    debug: process.env.I18N_DEBUG === 'true',
+    saveMissing: process.env.NODE_ENV !== 'production',
 
     interpolation: {
         escapeValue: false, // not needed for react!!
@@ -28,6 +38,7 @@ if (process.browser) {
     i18n
         .use(XHR)
         // .use(Cache)
+        .use(cookieParser)
         .use(LanguageDetector)
 }
 

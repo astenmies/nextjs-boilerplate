@@ -15,15 +15,26 @@ const handle = app.getRequestHandler()
 const i18nextMiddleware = require('i18next-express-middleware')
 const Backend = require('i18next-node-fs-backend')
 const i18n = require('./src/i18n')
+const cookieParser = require('cookie-parser')
 
 // init i18next with serverside settings
 // using i18next-express-middleware
 i18n
     .use(Backend)
+    .use(cookieParser())
     .use(i18nextMiddleware.LanguageDetector)
     .init({
-        preload: ['en', 'cn'], // preload all langages
+        preload: ['en-US', 'zh-CN', 'zh-TW'], // preload all langages
+        whitelist: ['en-US', 'zh-CN', 'zh-TW'],
+        fallbackLng: 'en-US',
         ns: ['common'], // need to preload all the namespaces
+        defaultNS: 'common',
+        load: 'currentOnly', // language codes to lookup, given set language is 'en-US': 'all' --> ['en-US', 'en', 'dev'], 'currentOnly' --> 'en-US', 'languageOnly' --> 'en'
+        detection: {
+            order: ['querystring', 'cookie', 'header'],
+            lookupQuerystring: "lang",
+            caches: false, // ['cookie']
+        },
         backend: {
             loadPath: path.join(__dirname, './static/locales/{{lng}}/{{ns}}.json'),
             addPath: path.join(__dirname, './static/locales/{{lng}}/{{ns}}.missing.json')
@@ -38,7 +49,7 @@ i18n
                 server.use(i18nextMiddleware.handle(i18n))
 
                 // serve locales for client
-                server.use('/locales', express.static(path.join(__dirname, '/locales')))
+                server.use('/locales', express.static(path.join(__dirname, '/static/locales')))
 
                 // missing keys
                 server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n))
@@ -72,3 +83,12 @@ i18n
                 })
             })
     })
+
+i18n.on('languageChanged', function (lng) {
+    // Keep language in sync
+    req.language = req.locale = req.lng = lng;
+    req.languages = i18next.services.languageUtils.toResolveHierarchy(lng);
+    if (i18next.services.languageDetector) {
+        i18next.services.languageDetector.cacheUserLanguage(req, res, lng);
+    }
+});

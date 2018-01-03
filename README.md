@@ -15,19 +15,44 @@
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 
 
+## How to use
+
+Download the example [or clone the repo](https://github.com/zeit/next.js):
+
+```bash
+git clone ssh://git@192.168.92.249:10022/yc-frontend/171228-ipay.git
+```
+
+Install it and run:
+
+```bash
+yarn
+yarn dev 
+```
+
+
 ## 部屬環境
 
 將 docker-compose.yml.sample 複製為 docker-compose.yml
 根據需求更改 APP_ENV 來決定環境別（正式 production, 測試 sandbox, 開發 develop）
 
-```
-啟動 (加上 -d 可常駐背景執行)
-$ docker-compose up
+- 啟動 (加上 -d 可常駐背景執行)
 
-關閉
+```bash
+$ docker-compose up
+```
+
+- 關閉
+
+```bash
 $ docker-compose down
 ```
 
+- 查詢已啟動狀態
+
+```bash
+$ docker-compose logs -f
+```
 
 ## App Structure
 
@@ -56,14 +81,14 @@ $ docker-compose down
 └── docker-compose.yml.sample                   # Docker Compose 部屬設定檔
 ```
 
-### 路徑設定
+## 路徑設定
  
  
 #### next.js pages path
 
 in next.config.js
 
-```
+```javascript
 const app = next({ dir: './',dev })
 ```
 
@@ -92,7 +117,7 @@ PS: webpack.config.js by webstorm alias
 in server.js
 
 
-```
+```javascript
 // use next.js
 server.get('*', (req, res) => {
 
@@ -111,29 +136,47 @@ server.get('*', (req, res) => {
 })
 ```
 
+## i18n多國語系設定
 
-## How to use
+- words add in static/locales/{語系}/字典檔
+- debug mode 開啟設定至 .env 新增 I18N_DEBUG=true (default:false)
+- 開發模式會將頁面上使用到的語系但字典檔未建立時, 會自動加入到 static/locales/{語系}/*.missing.json
 
-Download the example [or clone the repo](https://github.com/zeit/next.js):
 
-```bash
-git clone ssh://git@192.168.92.249:10022/yc-frontend/171228-ipay.git
+```javascript
+import { translate } from 'react-i18next'
+import i18n from '@i18n'
+
+
+function Home ({ t,i18n }) {
+    return (
+        <Page>
+            <div>
+                {t('welcome')}
+            </div>
+        </Page>
+    )
+}
+
+const Extended = translate(['common'], { i18n, wait: process.browser })(Home)
+
+// Passing down initial translations
+// use req.i18n instance on serverside to avoid overlapping requests set the language wrong
+Extended.getInitialProps = async ({ req }) => {
+    if (req && !process.browser) return i18n.getInitialProps(req, ['common'])
+    return {}
+}
+
+export default Extended
+
 ```
 
-Install it and run:
 
-```bash
-yarn
-yarn dev 
-```
+## Other Reference
 
-
-## Other Example
-
-[ANT Mobile Design](https://mobile.ant.design/) Ant UI Plugin
-
-[with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile) Ant UI Plugin By Mobile
-
-[arc](https://github.com/diegohaz/arc) 參考原子設計
-
-[Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
+- [ANT Mobile Design](https://mobile.ant.design/) Ant UI Plugin
+- [with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile) Ant UI Plugin By Mobile
+- [arc](https://github.com/diegohaz/arc) 參考原子設計
+- [Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
+- [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)
+- [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
