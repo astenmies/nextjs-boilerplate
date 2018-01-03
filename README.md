@@ -182,3 +182,4 @@ export default Extended
 - [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)c
 - [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
 - [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
+- [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
