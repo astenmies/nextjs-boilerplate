@@ -2,9 +2,9 @@
   "name": "ipay",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server",
+    "dev": "node ./src/server",
     "build": "next build",
-    "start": "NODE_ENV=production node server"
+    "start": "NODE_ENV=production node ./src/server"
   },
   "dependencies": {
     "babel-plugin-module-resolver": "^3.0.0",

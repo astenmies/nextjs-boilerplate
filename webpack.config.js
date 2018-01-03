@@ -11,7 +11,7 @@ module.exports = {
             '@templates': path.resolve(__dirname, 'src/components/template'),
             '@molecules': path.resolve(__dirname, 'src/components/molecules'),
             '@organisms': path.resolve(__dirname, 'src/components/organisms'),
-            '@i18n': path.resolve(__dirname, 'src/i18n'),
+            '@i18next': path.resolve(__dirname, 'src/i18next'),
         }
     },
 }

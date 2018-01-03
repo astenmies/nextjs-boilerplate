@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '@templates'
 import { translate } from 'react-i18next'
-import i18n from '@i18n'
+import i18n from '@i18next'
 
 
 function Home ({ t,i18n }) {

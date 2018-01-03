@@ -65,15 +65,15 @@ $ docker-compose logs -f
 │   │   ├── molecules                           # 分子 (元子 + 元子)
 │   │   ├── organisms                           # 組織 (分子 + 分子 or + 分子)
 │   │   └── templates                           # 樣版
-│   └── i18n                                    # 多國語系的使用方法
-├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
-├── static                                      # 靜態資源路徑
-│   ├── locales                                 # 多國語系設定檔案
-│   │   └── en                                  # 英文
-│   │       └── common.json                     # 通用字典檔
-│   ├── favicon.ico                             # 網站圖標
-│   └── robots.txt                              # Google SEO過濾設定
-├── server.js                                   # Node 服務設定
+│   ├── pages                                   # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
+│   ├── static                                  # 靜態資源路徑
+│   │   ├── locales                             # 多國語系設定檔案
+│   │   │   └── en                              # 英文
+│   │   │       └── common.json                 # 通用字典檔
+│   │   ├── favicon.ico                         # 網站圖標
+│   │   └── robots.txt                          # Google SEO過濾設定
+│   ├── server.js                                   # Node 服務設定
+│   └── i18next                                 # 多國語系的使用方法
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
 ├── .gitignore                                  # Git版控過濾項目設定檔
