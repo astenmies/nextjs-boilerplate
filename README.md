@@ -13,6 +13,7 @@
 * [with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) CSS in JS
 * [with-absolute-imports](https://github.com/zeit/next.js/tree/canary/examples/with-absolute-imports) Import Prefix 
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
+* [with-loading](https://github.com/zeit/next.js/tree/canary/examples/with-loading) 頁面讀取條 nprogress
 
 
 ## How to use
