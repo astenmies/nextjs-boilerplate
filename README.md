@@ -72,7 +72,7 @@ $ docker-compose logs -f
 │   │   │       └── common.json                 # 通用字典檔
 │   │   ├── favicon.ico                         # 網站圖標
 │   │   └── robots.txt                          # Google SEO過濾設定
-│   ├── server.js                                   # Node 服務設定
+│   ├── server.js                               # Node 服務設定
 │   └── i18next                                 # 多國語系的使用方法
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── .babelrc                                    # Babel設定檔
@@ -181,3 +181,4 @@ export default Extended
 - [Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
 - [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)c
 - [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
+- [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
