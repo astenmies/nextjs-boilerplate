@@ -104,7 +104,7 @@ in .babelrc
 | @templates | src/components/templates   |
 | @molecules | src/components/molecules   |
 | @organisms | src/components/organisms   |
-| @i18n      | src/i18n                   |
+| @i18next   | src/i18next                |
  
 PS: webpack.config.js by webstorm alias
 
