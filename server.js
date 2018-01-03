@@ -2,7 +2,6 @@ const express = require('express')
 const next = require('next')
 const path = require('path')
 const { parse } = require('url')
-const cookieParser = require('cookie-parser')
 
 require('dotenv').config()
 
@@ -16,7 +15,7 @@ const handle = app.getRequestHandler()
 const i18nextMiddleware = require('i18next-express-middleware')
 const Backend = require('i18next-node-fs-backend')
 const i18n = require('./src/i18n')
-
+const cookieParser = require('cookie-parser')
 
 // init i18next with serverside settings
 // using i18next-express-middleware
@@ -33,13 +32,13 @@ i18n
         load: 'currentOnly', // language codes to lookup, given set language is 'en-US': 'all' --> ['en-US', 'en', 'dev'], 'currentOnly' --> 'en-US', 'languageOnly' --> 'en'
         detection: {
             // order: ["localStorage", "navigator"],
-            // lookupLocalStorage: 'i18nextLng',
+            lookupLocalStorage: 'i18nextLng',
             order: ['querystring', 'cookie', 'header'],
             lookupQuerystring: "lang",
             lookupCookie: 'i18next',
             // cache user language
             caches: false, // ['cookie']
-            cookieDomain: 'localhost',
+            // cookieDomain: 'localhost',
         },
         backend: {
             loadPath: path.join(__dirname, './static/locales/{{lng}}/{{ns}}.json'),
@@ -90,11 +89,11 @@ i18n
             })
     })
 
-    .on('languageChanged', function (lng) {
+i18n.on('languageChanged', function (lng) {
     // Keep language in sync
     req.language = req.locale = req.lng = lng;
     req.languages = i18next.services.languageUtils.toResolveHierarchy(lng);
     if (i18next.services.languageDetector) {
         i18next.services.languageDetector.cacheUserLanguage(req, res, lng);
     }
-})
+});

@@ -1,6 +1,7 @@
 const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
 const LanguageDetector = require('i18next-browser-languagedetector')
+const cookieParser = require('cookie-parser')
 
 //Configuration options
 // https://www.i18next.com/configuration-options.html
@@ -14,17 +15,17 @@ const options = {
     defaultNS: 'common',
 
     //
-    // detection: {
-    //     order: ['querystring', 'cookie', 'header'],
-    //     // keys or params to lookup language from
-    //     lookupQuerystring: 'lang',
-    //     lookupCookie: 'i18next',
-    //     // cache user language
-    //     caches: false, // ['cookie']
-    //     // optional expire and domain for set cookie
-    //     cookieDomain: 'localhost',
-    //
-    // },
+    detection: {
+        // order: ['querystring', 'cookie', 'header'],
+        // // keys or params to lookup language from
+        // lookupQuerystring: 'lang',
+        lookupCookie: 'i18next',
+        // cache user language
+        caches: ['cookie'], // ['cookie']
+        // optional expire and domain for set cookie
+        // cookieDomain: 'localhost',
+
+    },
 
     debug: process.env.I18N_DEBUG === 'true',
     saveMissing: process.env.NODE_ENV !== 'production',
@@ -44,6 +45,7 @@ if (process.browser) {
     i18n
         .use(XHR)
         // .use(Cache)
+        .use(cookieParser)
         .use(LanguageDetector)
 }
 
