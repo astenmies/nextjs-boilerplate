@@ -179,3 +179,4 @@ export default Extended
 - [arc](https://github.com/diegohaz/arc) 參考原子設計
 - [Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
 - [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)
+- [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
