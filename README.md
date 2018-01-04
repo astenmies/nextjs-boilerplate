@@ -15,7 +15,6 @@
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 * [with-loading](https://github.com/zeit/next.js/tree/canary/examples/with-loading) 頁面讀取條 nprogress
 
-
 ## How to use
 
 Download the example [or clone the repo](https://github.com/zeit/next.js):
@@ -27,7 +26,7 @@ git clone ssh://git@192.168.92.249:10022/yc-frontend/171228-ipay.git
 Install it and run:
 
 ```bash
-yarn
+yarn or 部屬只安裝生產依賴(yarn install --production)
 yarn dev 
 ```
 
@@ -191,6 +190,13 @@ get http://localhost?lang=zh-cn
     'languageOnly' --> 'en'
 ```
 
+
+## CSS Styles Mode
+
+Scss, styled-component
+
+
+
 ## Other Reference
 
 - [ANT Mobile Design](https://mobile.ant.design/) Ant UI Plugin
@@ -201,3 +207,9 @@ get http://localhost?lang=zh-cn
 - [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
 - [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
+
+
+## PS
+
+- next.config.js的webpack設定路徑產生找不到css loader modules問題,故將 next pages 路徑移動回根目錄,避免導入Package異常
+

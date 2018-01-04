@@ -47,7 +47,7 @@ module.exports = {
             },
           },
         ],
-            } // eslint-disable-line
+          } // eslint-disable-line
     );
 
 

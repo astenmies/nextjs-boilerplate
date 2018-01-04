@@ -12,6 +12,7 @@ module.exports = {
       '@molecules': path.resolve(__dirname, 'src/components/molecules'),
       '@organisms': path.resolve(__dirname, 'src/components/organisms'),
       '@i18next': path.resolve(__dirname, 'src/i18next'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
     },
   },
 };
