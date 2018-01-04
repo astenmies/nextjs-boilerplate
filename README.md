@@ -193,7 +193,8 @@ get http://localhost?lang=zh-cn
 
 ## CSS Styles Mode
 
-Scss, styled-component
+- Scss 設定全域的項目, 例如 Bootstrap 設定
+- Styled-components 用於設計元件
 
 
 
@@ -209,7 +210,24 @@ Scss, styled-component
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
 
 
-## PS
+## Remarks
 
 - next.config.js的webpack設定路徑產生找不到css loader modules問題,故將 next pages 路徑移動回根目錄,避免導入Package異常
+- 在 babelrc 加上 env設定會產生 styled-components 的問題
 
+```
+"env": {
+    "development": {
+      "presets": "next/babel"
+    },
+    "production": {
+      "presets": "next/babel"
+    },
+    "test": {
+      "presets": [
+        ["env", { "modules": "commonjs" }],
+        "next/babel"
+      ]
+    }
+  }
+```
