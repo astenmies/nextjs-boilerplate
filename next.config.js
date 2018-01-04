@@ -1,26 +1,56 @@
+require('dotenv').config();
 
-require('dotenv').config()
-
-const path = require('path')
-const Dotenv = require('dotenv-webpack')
+const path = require('path');
+const Dotenv = require('dotenv-webpack');
+const glob = require('glob');
 
 module.exports = {
 
-    assetPrefix: process.env.CDN_URL ? process.env.CDN_URL : '',
+  assetPrefix: process.env.CDN_URL ? process.env.CDN_URL : '',
 
-    webpack: (config) => {
-        config.plugins = config.plugins || []
+  webpack: (config) => {
+    config.plugins = config.plugins || [];
 
-        config.plugins = [
-            ...config.plugins,
+    config.plugins = [
+      ...config.plugins,
 
-            // Read the .env file
-            new Dotenv({
-                path: path.join(__dirname, '.env'),
-                systemvars: true
-            })
-        ]
+      // Read the .env file
+      new Dotenv({
+        path: path.join(__dirname, '.env'),
+        systemvars: true,
+      }),
+    ];
 
-        return config
-    }
-}
+
+    config.module.rules.push(
+      {
+        test: /\.(css|scss)/,
+        loader: 'emit-file-loader',
+        options: {
+          name: 'dist/[path][name].[ext]',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['babel-loader', 'raw-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        use: ['babel-loader', 'raw-loader', 'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['styles', 'node_modules']
+                .map(d => path.join(__dirname, d))
+                .map(g => glob.sync(g))
+                .reduce((a, c) => a.concat(c), []),
+            },
+          },
+        ],
+            } // eslint-disable-line
+    );
+
+
+    return config;
+  },
+};

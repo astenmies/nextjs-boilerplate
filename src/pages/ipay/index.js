@@ -1,18 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
-import styled from 'styled-components'
-import Layout from 'src/components/templates'
+import React from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import Layout from 'src/components/templates';
 
 
 const Title = styled.h1`
   color: #000;
   font-size: 14px;
-`
+`;
 
 export default () => (
-    <Layout>
+  <Layout>
 
-        <Title>IPay Content</Title>
+    <Title>IPay Content</Title>
 
-    </Layout>
-)
+  </Layout>
+);

@@ -143,7 +143,7 @@ server.get('*', (req, res) => {
 - words add in static/locales/{語系}/字典檔
 - debug mode 開啟設定至 .env 新增 I18N_DEBUG=true (default:false)
 - 開發模式會將頁面上使用到的語系但字典檔未建立時, 會自動加入到 static/locales/{語系}/*.missing.json
-
+- How to change language in code:
 
 ```javascript
 import { translate } from 'react-i18next'
@@ -173,6 +173,23 @@ export default Extended
 
 ```
 
+- How to change language in query string
+```
+get http://localhost?lang=zh-cn
+```
+
+- Configuration options
+
+  https://www.i18next.com/configuration-options.html
+  
+  language codes to lookup, given set language is 'en-US':
+  
+```
+  load: 
+    'all' --> ['en-US', 'en', 'dev'], 
+    'currentOnly' --> 'en-US', 
+    'languageOnly' --> 'en'
+```
 
 ## Other Reference
 

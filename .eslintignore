@@ -1,0 +1,5 @@
+*.spec.js
+*.test.js
+src/server.js
+src/components/templates/*.js
+src/pages/*

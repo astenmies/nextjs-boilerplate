@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/no-danger": "off",
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "no-unused-vars": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "max-len": "off"
+  },
+  "globals": {
+    "fetch": true
+  },
+  "plugins": [
+    "jest"
+  ]
+}
