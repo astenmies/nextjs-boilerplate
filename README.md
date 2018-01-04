@@ -14,6 +14,8 @@
 * [with-absolute-imports](https://github.com/zeit/next.js/tree/canary/examples/with-absolute-imports) Import Prefix 
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 * [with-loading](https://github.com/zeit/next.js/tree/canary/examples/with-loading) 頁面讀取條 nprogress
+* [eslint-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ESLINT
+
 
 ## How to use
 
@@ -59,27 +61,35 @@ $ docker-compose logs -f
 
 ```
 .
+├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
 ├── src                                         # App source code
 │   ├── components                              # 組件庫
 │   │   ├── atoms                               # 元子 (最小的元件)
 │   │   ├── molecules                           # 分子 (元子 + 元子)
 │   │   ├── organisms                           # 組織 (分子 + 分子 or + 分子)
 │   │   └── templates                           # 樣版
-│   ├── pages                                   # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
-│   ├── static                                  # 靜態資源路徑
-│   │   ├── locales                             # 多國語系設定檔案
-│   │   │   └── en                              # 英文
-│   │   │       └── common.json                 # 通用字典檔
-│   │   ├── favicon.ico                         # 網站圖標
-│   │   └── robots.txt                          # Google SEO過濾設定
 │   ├── server.js                               # Node 服務設定
 │   └── i18next                                 # 多國語系的使用方法
-├── .next.config.js                             # Next設定&Webpack設定檔
+├── static                                      # 靜態資源路徑
+│   ├── locales                                 # 多國語系設定檔案
+│   │   └── en                                  # 英文
+│   │       └── common.json                     # 通用字典檔
+│   ├── favicon.ico                             # 網站圖標
+│   └── robots.txt                              # Google SEO忽略設定檔
 ├── .babelrc                                    # Babel設定檔
-├── .gitignore                                  # Git版控過濾項目設定檔
-├── .gitlab-ci.yml                              # GITLAB-CI 持續整合測試設定檔
+├── .env.sandbox                                # Sandbox站環境設定範本
+├── .eslintignore                               # Eslint忽略設定檔
+├── .eslintrc                                   # Eslint規則設定檔
+├── .gitignore                                  # Git版控忽濾項目設定檔
+├── jest.config.js                              # Jest測試設定檔
+├── .next.config.js                             # Next設定&Webpack設定檔
+├── package.json                                # 依賴套件設定
+├── postcss.config.js                           # CSS預處理設定
+├── webpack.config.js                           # Webpack-Webstorm路徑別名設定
+├── .gitlab-ci.yml                              # Gitlab-CI 持續整合測試設定檔
 └── docker-compose.yml.sample                   # Docker Compose 部屬設定檔
 ```
+
 
 ## 路徑設定
  
@@ -204,15 +214,17 @@ get http://localhost?lang=zh-cn
 - [with-antd-mobile](https://github.com/zeit/next.js/tree/canary/examples/with-antd-mobile) Ant UI Plugin By Mobile
 - [arc](https://github.com/diegohaz/arc) 參考原子設計
 - [Next.js + 各種套件組合系列](https://ithelp.ithome.com.tw/articles/10190581) 2018IT邦幫忙鐵人賽
-- [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)c
+- [使用 react-i18next 建立多語系](http://jason-wang.logdown.com/posts/771654)
 - [I18N Support](https://github.com/erikras/react-redux-universal-hot-example/issues/624)
 - [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
+- [nextjs-seed](https://github.com/mcmakler/nextjs-seed) 參考ESLINT與IMPORT SCSS Build
 
 
 ## Remarks
 
 - next.config.js的webpack設定路徑產生找不到css loader modules問題,故將 next pages 路徑移動回根目錄,避免導入Package異常
+  若更改專案根路徑, 需要修改 src/server.js 的i18next static路徑, 
 - 在 babelrc 加上 env設定會產生 styled-components 的問題
 
 ```
