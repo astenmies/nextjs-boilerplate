@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+const fs = require('fs');
+const trash = require('trash');
+
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const glob = require('glob');
@@ -21,34 +24,40 @@ module.exports = {
       }),
     ];
 
+    config.plugins = config.plugins.filter(
+      plugin => (plugin.constructor.name !== 'UglifyJsPlugin'),
+    );
 
-    config.module.rules.push(
-      {
-        test: /\.(css|scss)/,
-        loader: 'emit-file-loader',
-        options: {
-          name: 'dist/[path][name].[ext]',
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        {
+          loader: 'emit-file-loader',
+          options: {
+            name: 'dist/[path][name].[ext]',
+          },
         },
-      },
-      {
-        test: /\.css$/,
-        use: ['babel-loader', 'raw-loader', 'postcss-loader'],
-      },
-      {
-        test: /\.s(a|c)ss$/,
-        use: ['babel-loader', 'raw-loader', 'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ['styles', 'node_modules']
-                .map(d => path.join(__dirname, d))
-                .map(g => glob.sync(g))
-                .reduce((a, c) => a.concat(c), []),
+        {
+          loader: 'skeleton-loader',
+          options: {
+            procedure(content) {
+              const fileName = `${this._module.userRequest}.json`;
+              const classNames = fs.readFileSync(fileName, 'utf8');
+
+              trash(fileName);
+
+              return ['module.exports = {',
+                `styles: ${classNames},`,
+                `stylesheet: \`${content}\``,
+                '}',
+              ].join('');
             },
           },
-        ],
-          } // eslint-disable-line
-    );
+        },
+        'postcss-loader',
+        'sass-loader',
+      ],
+    });
 
 
     return config;
