@@ -206,6 +206,32 @@ get http://localhost?lang=zh-cn
 - Scss 設定全域的項目, 例如 Bootstrap 設定
 - Styled-components 用於設計元件
 
+## CSS Module BEN
+
+使用skeleton-loader,之後會產生scss.json,再用trash刪除產生的json
+
+BEN格式 [path][name]__[local]--[hash:base64:5]
+
+```scss
+.title{
+  color: red;
+}
+```
+
+```javascript
+import Head from 'next/head';
+import {stylesheet, styles} from './index.scss'
+
+return (
+    <div>
+        <Head>
+            <style dangerouslySetInnerHTML={{__html: stylesheet}} />
+        </Head>
+        <p className={styles.title}>MY TITLE</p>
+    </div>
+)
+    
+```
 
 
 ## Other Reference
@@ -219,6 +245,7 @@ get http://localhost?lang=zh-cn
 - [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
 - [nextjs-seed](https://github.com/mcmakler/nextjs-seed) 參考ESLINT與IMPORT SCSS Build
+- [nextjs-starter](https://github.com/watcharakrit/nextjs-starter) 參考skeleton scss-module bem
 
 
 ## Remarks
