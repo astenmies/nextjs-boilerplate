@@ -244,7 +244,6 @@ return (
 
 - [x] glob
 - [x] prop-types
-- [x] autoprefixer (postcss-cssnext已包含可考慮刪除不安裝)
 - [x] husky
 
 處理JS物件套件
