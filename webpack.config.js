@@ -8,7 +8,7 @@ module.exports = {
     alias: {
       // CUSTOM PACKAGES:
       '@atoms': path.resolve(__dirname, 'src/components/atoms'),
-      '@templates': path.resolve(__dirname, 'src/components/template'),
+      '@templates': path.resolve(__dirname, 'src/components/templates'),
       '@molecules': path.resolve(__dirname, 'src/components/molecules'),
       '@organisms': path.resolve(__dirname, 'src/components/organisms'),
       '@i18next': path.resolve(__dirname, 'src/i18next'),

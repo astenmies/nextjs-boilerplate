@@ -23,6 +23,8 @@ export default () => (
             <Link href="/examples/css-modules"><a>CSS-Modules</a></Link>
             <br/>
             <Link href="/examples/i18next"><a>i18Next</a></Link>
+            <br/>
+            <Link href="/examples/page-link"><a>Page-Link</a></Link>
         </nav>
     </div>
 

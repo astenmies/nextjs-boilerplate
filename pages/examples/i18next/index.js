@@ -1,9 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import Template from '@templates/example';
 import {translate} from 'react-i18next';
 import i18n from '@i18next';
-import Head from 'next/head';
 
 
 function Home({t, i18n}) {
