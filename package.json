@@ -48,7 +48,6 @@
     "trash": "^4.2.1"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-airbnb-base": "^12.0.0",
