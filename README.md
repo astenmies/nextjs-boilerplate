@@ -96,17 +96,16 @@ $ docker-compose logs -f
 
 - [x] glob
 - [x] prop-types
-- [x] autoprefixer
+- [x] autoprefixer (postcss-cssnext已包含可考慮刪除不安裝)
 - [x] husky
 
-#### 處理JS物件套件
+- 處理JS物件套件
 - [x] immutable
 
-#### JS函示庫
+- JS函示庫
 - [x] jquery
 
-
-#### 程式碼品質檢測套件
+- 程式碼品質檢測套件
 - [x] eslint - 程式碼品質工具
 - [x] eslint-config-airbnb - 程式碼品質工具
 - [x] eslint-config-airbnb-base - 程式碼品質工具
@@ -115,12 +114,10 @@ $ docker-compose logs -f
 - [x] eslint-plugin-jsx-a11y
 - [x] eslint-plugin-react
 
-
-#### 測試套件
+- 測試套件
 - [x] jest
 
-
-#### CSS轉譯套件
+- CSS轉譯套件
 - [x] raw-loader
 - [x] sass-loader
 - [x] postcss-easy-import
@@ -129,8 +126,12 @@ $ docker-compose logs -f
 - [x] styled-component
 - [x] classnames (className標籤轉換)
 
+- CSS-MODULE 加裝
+- [x] postcss-cssnext
+- [x] postcss-modules
+- [x] skeleton-loader
 
-#### 多國語系套件
+- 多國語系套件
 - [x] react-i18next
 - [x] i18next
 - [x] i18next-browser-languagedetector
@@ -138,15 +139,13 @@ $ docker-compose logs -f
 - [x] i18next-node-fs-backend
 - [x] i18next-xhr-backend
 
-### 網頁進度讀取條
+- 網頁進度讀取條
 - [x] nprogress
 
-
-### CSS各瀏覽器統一初始化
+- CSS各瀏覽器統一初始化
 - [x] normalize.css
 
-
-### BABEL轉譯套件
+- BABEL轉譯套件
 - [x] babel-plugin-module-resolver
 - [x] babel-plugin-styled-components
 - [x] babel-polyfill
@@ -155,23 +154,25 @@ $ docker-compose logs -f
 - [x] babel-preset-stage-0
 - [x] babel-register
 
-
-### Cookie套件
+- Cookie套件
 - [x] js-cookie
 - [x] cookie-parser
 
-
-### 環境參數引入.env套件
+- 環境參數引入.env套件
 - [x] dotenv
 - [x] dotenv-webpack
 
-
-### 後端服務套件
+- 後端服務套件
 - [x] express
 
-
-### 讓前後端可共用程式碼的套件
+- 讓前後端可共用程式碼的套件
 - [x] isomorphic-fetch
+
+- 上線前壓縮用
+- [x] cssnano
+
+- 刪除檔案使用
+- [x] trash
 
 
 ## 路徑設定
@@ -289,6 +290,33 @@ get http://localhost?lang=zh-cn
 - Scss 設定全域的項目, 例如 Bootstrap 設定
 - Styled-components 用於設計元件
 
+
+## CSS Module BEM
+
+使用skeleton-loader,之後會產生scss.json,再用trash刪除產生的json
+
+BEN格式 [path][name]__[local]--[hash:base64:5]
+
+```scss
+.title{
+  color: red;
+}
+```
+
+```javascript
+import Head from 'next/head';
+import {stylesheet, styles} from './index.scss'
+
+return (
+    <div>
+        <Head>
+            <style dangerouslySetInnerHTML={{__html: stylesheet}} />
+        </Head>
+        <p className={styles.title}>MY TITLE</p>
+    </div>
+)
+    
+```
 
 
 ## Other Reference

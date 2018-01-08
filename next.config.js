@@ -1,56 +1,85 @@
 require('dotenv').config();
 
+const fs = require('fs');
+const trash = require('trash'); // 刪除 skeleton-loader 所產生的檔案
+
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const glob = require('glob');
 
+
 module.exports = {
 
-  assetPrefix: process.env.CDN_URL ? process.env.CDN_URL : '',
+    assetPrefix: process.env.CDN_URL ? process.env.CDN_URL : '',
 
-  webpack: (config) => {
-    config.plugins = config.plugins || [];
+    webpack: (config) => {
+        config.plugins = config.plugins || [];
 
-    config.plugins = [
-      ...config.plugins,
+        config.plugins = [
+            ...config.plugins,
 
-      // Read the .env file
-      new Dotenv({
-        path: path.join(__dirname, '.env'),
-        systemvars: true,
-      }),
-    ];
+            // Read the .env file
+            new Dotenv({
+                path: path.join(__dirname, '.env'),
+                systemvars: true,
+            }),
+        ];
 
 
-    config.module.rules.push(
-      {
-        test: /\.(css|scss)/,
-        loader: 'emit-file-loader',
-        options: {
-          name: 'dist/[path][name].[ext]',
-        },
-      },
-      {
-        test: /\.css$/,
-        use: ['babel-loader', 'raw-loader', 'postcss-loader'],
-      },
-      {
-        test: /\.s(a|c)ss$/,
-        use: ['babel-loader', 'raw-loader', 'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ['styles', 'node_modules']
-                .map(d => path.join(__dirname, d))
-                .map(g => glob.sync(g))
-                .reduce((a, c) => a.concat(c), []),
+        // skeleton-loader 範例中所使用(不確定用途為何)
+        config.plugins = config.plugins.filter(
+            plugin => (plugin.constructor.name !== 'UglifyJsPlugin'),
+        );
+
+
+        config.module.rules.push(
+            {
+                test: /\.(css|scss)/,
+                loader: 'emit-file-loader',
+                options: {
+                    name: 'dist/[path][name].[ext]',
+                },
             },
-          },
-        ],
-          } // eslint-disable-line
-    );
+            {
+                test: /\.css$/,
+                use: ['babel-loader', 'raw-loader', 'postcss-loader'],
+            },
+            {
+                test: /\.s(a|c)ss$/,
+                use:
+                    [
+                        {
+                            loader: 'skeleton-loader',
+                            options: {
+                                procedure(content) {
+                                    const fileName = `${this._module.userRequest}.json`;
+                                    const classNames = fs.readFileSync(fileName, 'utf8');
+
+                                    trash(fileName);
+
+                                    return ['module.exports = {',
+                                        `styles: ${classNames},`,
+                                        `stylesheet: \`${content}\``,
+                                        '}',
+                                    ].join('');
+                                },
+                            },
+                        },
+                        'postcss-loader',
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                includePaths: ['styles', 'node_modules']
+                                    .map(d => path.join(__dirname, d))
+                                    .map(g => glob.sync(g))
+                                    .reduce((a, c) => a.concat(c), []),
+                            },
+                        },
+                    ],
+            } // eslint-disable-line
+        );
 
 
-    return config;
-  },
+        return config;
+    },
 };
