@@ -3,3 +3,4 @@
 src/server.js
 src/components/templates/*.js
 pages/*
+next.config.js

@@ -3,14 +3,21 @@ import Link from 'next/link';
 import Page from '@templates';
 import { translate } from 'react-i18next';
 import i18n from '@i18next';
+import Head from 'next/head';
+import {stylesheet, styles} from './index.scss'
+
 
 
 function Home({ t, i18n }) {
   return (
     <Page>
+      <Head>
+        <style dangerouslySetInnerHTML={{__html: stylesheet}} />
+      </Head>
+
       <div>
         {t('welcome')}
-        <p>{t('common:integrates_react-i18next')}</p>
+        <p className={styles.title}>{t('common:integrates_react-i18next')}</p>
 
         <button
           onClick={() => { i18n.changeLanguage('zh-TW'); }}
