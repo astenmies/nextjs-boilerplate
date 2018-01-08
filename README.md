@@ -1,4 +1,4 @@
-# iPay存款平台
+# Next.js boilerplate
 
 
 ## Features
