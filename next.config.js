@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const webpack = require('webpack');
 const fs = require('fs');
 const trash = require('trash'); // 刪除 skeleton-loader 所產生的檔案
 
@@ -31,6 +32,13 @@ module.exports = {
             plugin => (plugin.constructor.name !== 'UglifyJsPlugin'),
         );
 
+        config.plugins.push(
+            new webpack.ProvidePlugin({
+                '$': 'jquery',
+                JQuery: 'jquery',
+                "window.jQuery": "jquery"
+            })
+        );
 
         config.module.rules.push(
             {
@@ -76,7 +84,7 @@ module.exports = {
                             },
                         },
                     ],
-            } // eslint-disable-line
+            }
         );
 
 

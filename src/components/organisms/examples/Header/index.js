@@ -25,6 +25,8 @@ export default () => (
       <Link href="/examples/i18next"><a>i18Next</a></Link>
       <br />
       <Link href="/examples/page-link"><a>Page-Link</a></Link>
+      <br />
+      <Link href="/examples/with-jquery"><a>With-JQuery</a></Link>
     </nav>
   </div>
 
