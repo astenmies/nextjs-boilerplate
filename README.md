@@ -360,7 +360,9 @@ Cookie套件
 ```
 
 
-- yarn build 出現警告 Warning: postcss-cssnext found a duplicate plugin ('autoprefixer') in your postcss plugins. This might be inefficient. You should remove 'autoprefixer' from your postcss plugin list since it's already included by postcss-cssnext.
+- yarn build 出現警告 
+
+> Warning: postcss-cssnext found a duplicate plugin ('autoprefixer') in your postcss plugins. This might be inefficient. You should remove 'autoprefixer' from your postcss plugin list since it's already included by postcss-cssnext.
 
 ```
 因為 cssnext 跟 cssnano 都包含了 autoprefixer, 所以會出現此警告, 可無視
