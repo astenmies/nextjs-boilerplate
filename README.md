@@ -8,7 +8,7 @@
 * [NextJs 4.2.1](https://github.com/zeit/next.js/) ReactJS with SSR Framework
 * [Bootstrap 4.0.0-beta.2](http://bootstrap.hexschool.com/docs/4.0/components/popovers/) CSS Framework
 * [Webpack](https://webpack.github.io/) Module bundler
-* [express](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express) Web 應用程式 Express 是最小又靈活的 Node.js Web 應用程式架構，為 Web 與行動式應用程式提供一組健全的特性
+* [express](https://github.com/zeit/next.js/tree/canary/examples/custom-server-express) Nodejs 後端應用程式
 * [with-relay-modern](https://github.com/zeit/next.js/tree/master/examples/with-relay-modern) ENV dev Setting
 * [with-styled-components](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) CSS in JS
 * [with-absolute-imports](https://github.com/zeit/next.js/tree/canary/examples/with-absolute-imports) Import Prefix 
