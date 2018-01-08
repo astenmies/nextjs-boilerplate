@@ -1,6 +1,6 @@
 import Document, {Head, Main, NextScript} from 'next/document';
 import {ServerStyleSheet} from 'styled-components';
-import {stylesheet} from '@styles/main.scss';
+import {stylesheet} from '@styles/styles.scss';
 
 export default class MyDocument extends Document {
     static getInitialProps({renderPage}) {
@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
         return (
             <html>
             <Head>
+                <link rel='stylesheet' type='text/css' href='/static/css/normalize.css' />
                 <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
                 {this.props.styleTags}
             </Head>

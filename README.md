@@ -72,6 +72,9 @@ $ docker-compose logs -f
 │   ├── server.js                               # Node 服務設定
 │   └── i18next                                 # 多國語系的使用方法
 ├── static                                      # 靜態資源路徑
+│   ├── css                                     # 樣式
+│   ├── img                                     # 圖片
+│   ├── plugin                                  # 套件
 │   ├── locales                                 # 多國語系設定檔案
 │   │   └── en                                  # 英文
 │   │       └── common.json                     # 通用字典檔
@@ -209,7 +212,7 @@ get http://localhost?lang=zh-cn
 ## CSS Styles Mode
 
 - Scss 設定全域的項目, 例如 Bootstrap 設定
-- Styled-components 用於設計元件
+- 選擇使用 CSS-Modules 或 Styled-components 設計元件 (可選)
 
 
 ## CSS Module BEM
@@ -291,8 +294,6 @@ CSS-MODULE 加裝
 網頁進度讀取條
 - [x] nprogress
 
-CSS各瀏覽器統一初始化
-- [x] normalize.css
 
 BABEL轉譯套件
 - [x] babel-plugin-module-resolver

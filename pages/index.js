@@ -4,14 +4,17 @@ import Page from '@templates';
 import { translate } from 'react-i18next';
 import i18n from '@i18next';
 import Head from 'next/head';
-import {stylesheet, styles} from './index.scss'
+import {stylesheet, styles} from '@styles/page/_index.scss'
 
 
 
 function Home({ t, i18n }) {
   return (
     <Page>
-      <div className="title"> Example</div>
+      <Head>
+        <style dangerouslySetInnerHTML={{__html: stylesheet}} />
+      </Head>
+      <div className={styles.title}> The Rock</div>
     </Page>
   );
 }

@@ -1,0 +1,12 @@
+//浮動水平置中
+@mixin absoluteCenter(){
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align:center;
+}
+
+//背景圖
+@mixin background($img) {
+  background: url("/static/#{$img}") no-repeat center center;
+}
