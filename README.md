@@ -203,6 +203,8 @@ get http://localhost?lang=zh-cn
     'languageOnly' --> 'en'
 ```
 
+可參考 localhost:3000/examples/i18next
+
 
 ## CSS Styles Mode
 

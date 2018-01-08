@@ -11,27 +11,7 @@ import {stylesheet, styles} from './index.scss'
 function Home({ t, i18n }) {
   return (
     <Page>
-      <Head>
-        <style dangerouslySetInnerHTML={{__html: stylesheet}} />
-      </Head>
-
-      <div>
-        {t('welcome')}
-        <p className={styles.title}>{t('common:integrates_react-i18next')}</p>
-
-        <button
-          onClick={() => { i18n.changeLanguage('zh-TW'); }}
-        >繁體中文
-        </button>
-        <button
-          onClick={() => { i18n.changeLanguage('zh-CN'); }}
-        >简体中文
-        </button>
-        <button
-          onClick={() => { i18n.changeLanguage('en-US'); }}
-        >ENGLISH
-        </button>
-      </div>
+      <div className="title"> Example</div>
     </Page>
   );
 }

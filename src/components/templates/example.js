@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Header from '@organisms/examples/Header';
 
 export default ({ children, title = 'Sample' }) => (
   <div>
@@ -15,12 +16,12 @@ export default ({ children, title = 'Sample' }) => (
 
     </Head>
     <header>
-      <nav>
-        <Link href="/example/css-modules"><a>CSS-Modules</a></Link>
-      </nav>
     </header>
 
-    { children }
+    <Header />
+
+
+     { children }
 
     <footer />
   </div>

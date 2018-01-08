@@ -29,9 +29,7 @@ export default () => (
     <Box>
             header
     </Box>
-    <Link href="/index"><a>index</a></Link> |
-    <Link href="/about"><a>about</a></Link> |
-    <Link href="/contact"><a>contact</a></Link>
+    <Link href="/examples/css-modules"><a>Examples</a></Link>
   </div>
 
 );
