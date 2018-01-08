@@ -1,6 +1,8 @@
 {
   "name": "ipay",
+  "description": "Next.js with boilerplate",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
