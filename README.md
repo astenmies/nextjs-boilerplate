@@ -91,6 +91,89 @@ $ docker-compose logs -f
 ```
 
 
+
+## Package List
+
+- [x] glob
+- [x] prop-types
+- [x] autoprefixer
+- [x] husky
+
+#### 處理JS物件套件
+- [x] immutable
+
+#### JS函示庫
+- [x] jquery
+
+
+#### 程式碼品質檢測套件
+- [x] eslint - 程式碼品質工具
+- [x] eslint-config-airbnb - 程式碼品質工具
+- [x] eslint-config-airbnb-base - 程式碼品質工具
+- [x] eslint-plugin-import - 程式碼品質工具
+- [x] eslint-plugin-jest - 程式碼品質工具
+- [x] eslint-plugin-jsx-a11y
+- [x] eslint-plugin-react
+
+
+#### 測試套件
+- [x] jest
+
+
+#### CSS轉譯套件
+- [x] raw-loader
+- [x] sass-loader
+- [x] postcss-easy-import
+- [x] postcss-loader
+- [x] node-sass
+- [x] styled-component
+- [x] classnames (className標籤轉換)
+
+
+#### 多國語系套件
+- [x] react-i18next
+- [x] i18next
+- [x] i18next-browser-languagedetector
+- [x] i18next-express-middleware
+- [x] i18next-node-fs-backend
+- [x] i18next-xhr-backend
+
+### 網頁進度讀取條
+- [x] nprogress
+
+
+### CSS各瀏覽器統一初始化
+- [x] normalize.css
+
+
+### BABEL轉譯套件
+- [x] babel-plugin-module-resolver
+- [x] babel-plugin-styled-components
+- [x] babel-polyfill
+- [x] babel-preset-es2015
+- [x] babel-preset-es2017
+- [x] babel-preset-stage-0
+- [x] babel-register
+
+
+### Cookie套件
+- [x] js-cookie
+- [x] cookie-parser
+
+
+### 環境參數引入.env套件
+- [x] dotenv
+- [x] dotenv-webpack
+
+
+### 後端服務套件
+- [x] express
+
+
+### 讓前後端可共用程式碼的套件
+- [x] isomorphic-fetch
+
+
 ## 路徑設定
  
  
