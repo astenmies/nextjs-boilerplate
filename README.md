@@ -15,6 +15,7 @@
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 * [with-loading](https://github.com/zeit/next.js/tree/canary/examples/with-loading) 頁面讀取條 nprogress
 * [eslint-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ESLINT
+* [Yarn](https://yarnpkg.com/en/) 安裝依賴指令工具
 
 
 ## How to use
