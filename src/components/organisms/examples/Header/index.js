@@ -20,6 +20,8 @@ export default () => (
     </Head>
 
     <nav>
+      <Link href="/"><a>Index</a></Link>
+      <br />
       <Link href="/examples/css-modules"><a>CSS-Modules</a></Link>
       <br />
       <Link href="/examples/i18next"><a>i18Next</a></Link>

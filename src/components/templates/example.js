@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Header from '@organisms/examples/Header';
 
-export default ({ children, title = 'Sample' }) => (
+export default ({ children, title = 'Examples' }) => (
   <div>
     <Head>
       <title>{ title }</title>
