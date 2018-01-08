@@ -15,7 +15,7 @@ function Home({ t, i18n }) {
       </Head>
       <div>
         {t('welcome')}
-        <p className={styles.fuck}>{t('common:integrates_react-i18next')}</p>
+        <p className={styles.title}>{t('common:integrates_react-i18next')}</p>
         <p className={styles.fuck}>{t('common:integrates_react-i18next')}</p>
 
         <button
