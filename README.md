@@ -97,6 +97,7 @@ $ yarn test
 ├── .eslintrc                                   # Eslint規則設定檔
 ├── .gitignore                                  # Git版控忽濾項目設定檔
 ├── jest.config.js                              # Jest測試設定檔
+├── jest.setup.js                               # Jest額外設定檔
 ├── .next.config.js                             # Next設定&Webpack設定檔
 ├── package.json                                # 依賴套件設定
 ├── postcss.config.js                           # CSS預處理設定
