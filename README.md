@@ -353,6 +353,7 @@ Jest測試工具
 - [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
 - [nextjs-seed](https://github.com/mcmakler/nextjs-seed) 參考ESLINT與IMPORT SCSS Build
+- [React 前端單元測試教學](https://medium.com/@savemuse/react-%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6%E6%95%99%E5%AD%B8-2ccedbe79411) 參考撰寫JEST測試
 
 
 ## Remarks
