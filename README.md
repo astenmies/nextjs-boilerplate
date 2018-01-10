@@ -57,11 +57,21 @@ $ docker-compose down
 $ docker-compose logs -f
 ```
 
+- 測試程式碼
+
+```
+$ yarn test
+```
+
+
+
 ## App Structure
 
 
 ```
 .
+├── __test__                                    # Jest測試程式位置
+│   └── __snapshots__                           # Jest測試快照
 ├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
 ├── src                                         # App source code
 │   ├── components                              # 組件庫
@@ -266,8 +276,6 @@ JS函示庫
 - [x] eslint-plugin-jsx-a11y
 - [x] eslint-plugin-react
 
-測試套件
-- [x] jest
 
 CSS轉譯套件
 - [x] raw-loader
@@ -323,6 +331,12 @@ Cookie套件
 
 刪除檔案使用
 - [x] trash
+
+Jest測試工具
+- [x] jest
+- [x] eslint-plugin-jest
+- [x] enzyme
+- [x] enzyme-adapter-react-16
 
 
 
