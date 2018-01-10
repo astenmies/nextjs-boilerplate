@@ -50,6 +50,8 @@
     "trash": "^4.2.1"
   },
   "devDependencies": {
+    "enzyme": "3.2.0",
+    "enzyme-adapter-react-16": "1.1.1",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-airbnb-base": "^12.0.0",
@@ -58,11 +60,13 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "husky": "^0.14.3",
-    "jest": "^21.0.2",
+    "jest": "22.0.0",
     "node-sass": "^4.5.3",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^2.0.6",
     "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "15.6.2",
+    "react-test-renderer": "16.2.0",
     "sass-loader": "^6.0.6"
   }
 }
