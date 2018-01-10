@@ -1,6 +1,10 @@
-import Template from '@templates/example';
-
-export default () => (<Template>
-    <h2>Next.js Example</h2>
-
-</Template>);
+export default () => (
+    <div>
+        <style jsx>{`
+      p {
+        color: red;
+      }
+    `}</style>
+        <p>Hello World!</p>
+    </div>
+)

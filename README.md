@@ -14,6 +14,7 @@
 * [with-absolute-imports](https://github.com/zeit/next.js/tree/canary/examples/with-absolute-imports) Import Prefix 
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 * [with-loading](https://github.com/zeit/next.js/tree/canary/examples/with-loading) 頁面讀取條 nprogress
+* [with-jest](https://github.com/zeit/next.js/tree/canary/examples/with-jest) 測試工具
 * [eslint-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ESLINT
 * [Yarn](https://yarnpkg.com/en/) 安裝依賴指令工具
 
@@ -57,11 +58,21 @@ $ docker-compose down
 $ docker-compose logs -f
 ```
 
+- 測試程式碼
+
+```
+$ yarn test
+```
+
+
+
 ## App Structure
 
 
 ```
 .
+├── __test__                                    # Jest測試程式位置
+│   └── __snapshots__                           # Jest測試快照
 ├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
 ├── src                                         # App source code
 │   ├── components                              # 組件庫
@@ -266,8 +277,6 @@ JS函示庫
 - [x] eslint-plugin-jsx-a11y
 - [x] eslint-plugin-react
 
-測試套件
-- [x] jest
 
 CSS轉譯套件
 - [x] raw-loader
@@ -324,6 +333,13 @@ Cookie套件
 刪除檔案使用
 - [x] trash
 
+Jest測試工具
+- [x] jest
+- [x] eslint-plugin-jest
+- [x] enzyme
+- [x] enzyme-adapter-react-16
+- [x] react-addons-test-utils
+- [x] react-test-renderer
 
 
 ## Other Reference
@@ -337,6 +353,7 @@ Cookie套件
 - [head-elements](https://github.com/zeit/next.js/tree/canary/examples/head-elements) page內修改HEAD內容
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
 - [nextjs-seed](https://github.com/mcmakler/nextjs-seed) 參考ESLINT與IMPORT SCSS Build
+- [React 前端單元測試教學](https://medium.com/@savemuse/react-%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6%E6%95%99%E5%AD%B8-2ccedbe79411) 參考撰寫JEST測試
 
 
 ## Remarks
@@ -371,3 +388,5 @@ Cookie套件
 因為 cssnext 跟 cssnano 都包含了 autoprefixer, 所以會出現此警告, 可無視
 參考 http://cssnext.io/usage/#features
 ```
+
+- jest test 針對 styled-component 的內容無法比對 
