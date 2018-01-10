@@ -14,6 +14,7 @@
 * [with-absolute-imports](https://github.com/zeit/next.js/tree/canary/examples/with-absolute-imports) Import Prefix 
 * [with-react-i18next](https://github.com/zeit/next.js/blob/canary/examples/with-react-i18next/server.js) 多國語系
 * [with-loading](https://github.com/zeit/next.js/tree/canary/examples/with-loading) 頁面讀取條 nprogress
+* [with-jest](https://github.com/zeit/next.js/tree/canary/examples/with-jest) 測試工具
 * [eslint-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ESLINT
 * [Yarn](https://yarnpkg.com/en/) 安裝依賴指令工具
 
@@ -337,7 +338,8 @@ Jest測試工具
 - [x] eslint-plugin-jest
 - [x] enzyme
 - [x] enzyme-adapter-react-16
-
+- [x] react-addons-test-utils
+- [x] react-test-renderer
 
 
 ## Other Reference
@@ -385,3 +387,5 @@ Jest測試工具
 因為 cssnext 跟 cssnano 都包含了 autoprefixer, 所以會出現此警告, 可無視
 參考 http://cssnext.io/usage/#features
 ```
+
+- jest test 針對 styled-component 的內容無法比對 
