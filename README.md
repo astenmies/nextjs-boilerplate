@@ -24,7 +24,7 @@
 Download the example [or clone the repo](https://github.com/zeit/next.js):
 
 ```bash
-git clone ssh://git@192.168.92.249:10022/yc-frontend/171228-ipay.git
+git clone the repo
 ```
 
 Install it and run:
