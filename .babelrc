@@ -32,7 +32,8 @@
           "@molecules": "./src/components/molecules",
           "@organisms": "./src/components/organisms",
           "@i18next": "./src/i18next",
-          "@styles": "./src/styles"
+          "@styles": "./src/styles",
+          "@utils": "./src/utils"
         }
       }
     ]

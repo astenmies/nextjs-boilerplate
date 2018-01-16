@@ -14,11 +14,6 @@ const app = next({dir: './', dev});
 const handle = app.getRequestHandler();
 
 
-//Route
-const routes = require('./routes');
-const handler = routes.getRequestHandler(app);
-
-
 //i18next
 const i18n = require('./i18next');
 const Backend = require('i18next-node-fs-backend');
@@ -66,10 +61,25 @@ i18n
 
                 const server = express();
 
+
+                // enable middleware for i18next
+                server.use(i18nextMiddleware.handle(i18n));
+
+                // serve locales for client
+                server.use('/locales', express.static(path.join(__dirname, '../static/locales')));
+
+                // missing keys
+                server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n));
+
+
+
+
                 server.use(bodyParser.json())
                 server.use(bodyParser.urlencoded({ extended: false }))
                 server.use(cookieParser())
 
+
+                // JWT設定與驗證
                 server.post('/authenticate', (req, res) => {
                     const {username, password} = req.body
                     if (username === 'test' || password === 'test') {
@@ -95,12 +105,12 @@ i18n
 
                 // Authenticate middleware
                 // We will apply this middleware to every route except '/login' and '/_next'
-                server.use(unless(['/login', '/_next'], (req, res, next) => {
+                server.use(unless(['/examples/with-jwt/login', '/_next'], (req, res, next) => {
                     const token = req.cookies['x-access-token'];
                     if (token) {
                         jwt.verify(token, 'jwtSecret', (err, decoded) => {
                             if (err) {
-                                res.redirect('/login');
+                                res.redirect('/examples/with-jwt/login');
                             } else {
                                 // if everything is good, save to request for use in other routes
                                 req.decoded = decoded;
@@ -108,7 +118,7 @@ i18n
                             }
                         })
                     } else {
-                        res.redirect('/login');
+                        res.redirect('/examples/with-jwt/login');
                     }
                 }))
 
@@ -128,18 +138,6 @@ i18n
                         })
                     }
                 })
-
-
-                // enable middleware for i18next
-                server.use(i18nextMiddleware.handle(i18n));
-
-                // serve locales for client
-                server.use('/locales', express.static(path.join(__dirname, '../static/locales')));
-
-                // missing keys
-                server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n));
-
-
 
 
 

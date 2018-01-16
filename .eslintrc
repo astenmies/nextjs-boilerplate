@@ -12,7 +12,8 @@
     "max-len": "off"
   },
   "globals": {
-    "fetch": true
+    "fetch": true,
+    "document": true
   },
   "plugins": [
     "jest"

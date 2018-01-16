@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Router from 'next/router'
 import Head from 'next/head'
 import axios from 'axios'
-import { setCookie } from '../src/utils/CookieUtils'
+import { setCookie } from '@utils/CookieUtils'
 
 class Login extends Component {
     constructor (props) {
@@ -35,7 +35,7 @@ class Login extends Component {
             if (res.data.success) {
                 setCookie('x-access-token', res.data.token)
                 Router.push({
-                    pathname: '/'
+                    pathname: '/examples/with-jwt'
                 })
             }
         } catch (error) {

@@ -13,6 +13,7 @@ module.exports = {
       '@organisms': path.resolve(__dirname, 'src/components/organisms'),
       '@i18next': path.resolve(__dirname, 'src/i18next'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
 };
