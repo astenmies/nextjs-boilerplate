@@ -3,16 +3,17 @@
 const path = require('path');
 
 module.exports = {
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-    alias: {
-      // CUSTOM PACKAGES:
-      '@atoms': path.resolve(__dirname, 'src/components/atoms'),
-      '@templates': path.resolve(__dirname, 'src/components/templates'),
-      '@molecules': path.resolve(__dirname, 'src/components/molecules'),
-      '@organisms': path.resolve(__dirname, 'src/components/organisms'),
-      '@i18next': path.resolve(__dirname, 'src/i18next'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
+    resolve: {
+        extensions: ['.js', '.ts', '.tsx'],
+        alias: {
+            // CUSTOM PACKAGES:
+            '@atoms': path.resolve(__dirname, 'src/components/atoms'),
+            '@templates': path.resolve(__dirname, 'src/components/templates'),
+            '@molecules': path.resolve(__dirname, 'src/components/molecules'),
+            '@organisms': path.resolve(__dirname, 'src/components/organisms'),
+            '@i18next': path.resolve(__dirname, 'src/i18next'),
+            '@styles': path.resolve(__dirname, 'src/styles'),
+            '@utils': path.resolve(__dirname, 'src/utils'),
+        },
     },
-  },
 };

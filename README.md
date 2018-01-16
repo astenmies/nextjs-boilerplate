@@ -80,6 +80,7 @@ $ yarn test
 │   │   ├── molecules                           # 分子 (元子 + 元子)
 │   │   ├── organisms                           # 組織 (分子 + 分子 or + 分子)
 │   │   └── templates                           # 樣版
+│   ├── utils                                   # 工具方法
 │   ├── server.js                               # Node 服務設定
 │   └── i18next                                 # 多國語系的使用方法
 ├── static                                      # 靜態資源路徑
@@ -133,6 +134,7 @@ in .babelrc
 | @molecules | src/components/molecules   |
 | @organisms | src/components/organisms   |
 | @i18next   | src/i18next                |
+| @utils     | src/utils                  |
  
 PS: webpack.config.js by webstorm alias
 
@@ -341,6 +343,10 @@ Jest測試工具
 - [x] enzyme-adapter-react-16
 - [x] react-addons-test-utils
 - [x] react-test-renderer
+
+JWT使用工具
+- [x] jsonwebtoken
+- [x] jwt-decode
 
 
 ## Other Reference
