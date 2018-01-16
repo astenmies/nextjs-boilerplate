@@ -20,16 +20,16 @@ const Box = styled.div`
 `;
 
 export default () => (
-  <div>
-      <Head>
-      {/* Import CSS for nprogress */}
-      <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
+    <div>
+        <Head>
+            {/* Import CSS for nprogress */}
+            <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css"/>
         </Head>
 
-      <Box>
+        <Box>
             header
         </Box>
-      <Link href="/examples/css-modules"><a>Examples</a></Link>
+        <Link href="/examples/css-modules"><a>Examples</a></Link>
     </div>
 
 );

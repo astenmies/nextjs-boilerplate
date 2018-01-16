@@ -10,7 +10,9 @@
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "max-len": "off",
-    "indent": 2
+    "indent": ["error", 4],
+    "react/jsx-indent": [2,4],
+    "react/jsx-tag-spacing": {"beforeSelfClosing":"always"}
   },
   "globals": {
     "fetch": true,
