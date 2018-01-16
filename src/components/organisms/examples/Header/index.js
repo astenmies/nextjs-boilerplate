@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 Router.onRouteChangeStart = (url) => {
-  NProgress.start();
+    NProgress.start();
 };
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
@@ -14,12 +14,12 @@ Router.onRouteChangeError = () => NProgress.done();
 
 export default () => (
   <div>
-    <Head>
-      {/* Import CSS for nprogress */}
-      <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
-    </Head>
+      <Head>
+          {/* Import CSS for nprogress */}
+            <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
+        </Head>
 
-    <nav>
+        <nav>
       <Link href="/"><a>Index</a></Link>
       <br />
       <Link href="/examples/css-modules"><a>CSS-Modules</a></Link>
@@ -30,6 +30,6 @@ export default () => (
       <br />
       <Link href="/examples/with-jquery"><a>With-JQuery</a></Link>
     </nav>
-  </div>
+    </div>
 
 );
