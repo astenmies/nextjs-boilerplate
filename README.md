@@ -17,6 +17,7 @@
 * [with-jest](https://github.com/zeit/next.js/tree/canary/examples/with-jest) 測試工具
 * [eslint-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ESLINT
 * [Yarn](https://yarnpkg.com/en/) 安裝依賴指令工具
+* [JWT](https://jwt.io/) 使用JWT權限驗證
 
 
 ## How to use
@@ -80,6 +81,7 @@ $ yarn test
 │   │   ├── molecules                           # 分子 (元子 + 元子)
 │   │   ├── organisms                           # 組織 (分子 + 分子 or + 分子)
 │   │   └── templates                           # 樣版
+│   ├── styles                                  # SCSS樣式檔位置
 │   ├── utils                                   # 工具方法
 │   ├── server.js                               # Node 服務設定
 │   └── i18next                                 # 多國語系的使用方法
@@ -134,6 +136,7 @@ in .babelrc
 | @molecules | src/components/molecules   |
 | @organisms | src/components/organisms   |
 | @i18next   | src/i18next                |
+| @styles    | src/styles                 |
 | @utils     | src/utils                  |
  
 PS: webpack.config.js by webstorm alias
@@ -361,6 +364,7 @@ JWT使用工具
 - [with-data-prefetch](https://github.com/zeit/next.js/tree/canary/examples/with-data-prefetch) API非同步取資料
 - [nextjs-seed](https://github.com/mcmakler/nextjs-seed) 參考ESLINT與IMPORT SCSS Build
 - [React 前端單元測試教學](https://medium.com/@savemuse/react-%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6%E6%95%99%E5%AD%B8-2ccedbe79411) 參考撰寫JEST測試
+* [next.js-example-authentication-with-jwt](https://github.com/trandainhan/next.js-example-authentication-with-jwt) 使用JWT權限驗證
 
 
 ## Remarks
