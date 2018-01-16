@@ -61,7 +61,7 @@ $ docker-compose logs -f
 
 - 測試程式碼
 
-```
+```bash
 $ yarn test
 ```
 
@@ -206,7 +206,7 @@ export default Extended
 ```
 
 - How to change language in query string
-```
+```text
 get http://localhost?lang=zh-cn
 ```
 
@@ -216,7 +216,7 @@ get http://localhost?lang=zh-cn
   
   language codes to lookup, given set language is 'en-US':
   
-```
+```text
   load: 
     'all' --> ['en-US', 'en', 'dev'], 
     'currentOnly' --> 'en-US', 
@@ -377,7 +377,7 @@ JWT使用工具
   若更改專案根路徑, 需要修改 src/server.js 的i18next static路徑, 
 - 在 babelrc 加上 env設定會產生 styled-components 的問題
 
-```
+```json
 "env": {
     "development": {
       "presets": "next/babel"
