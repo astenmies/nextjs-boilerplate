@@ -352,6 +352,10 @@ JWT使用工具
 - [x] jwt-decode
 
 
+## ESLINT 特別規範
+
+- 4格縮進, 搭配Webstorm預設的格式化(Shift+Command+L)設定,在 git commit 時也會自動格式化
+
 ## Other Reference
 
 - [ANT Mobile Design](https://mobile.ant.design/) Ant UI Plugin
