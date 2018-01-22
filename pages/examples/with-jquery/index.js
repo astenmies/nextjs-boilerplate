@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Template from '@templates/example';
+import Template from '@layouts/example';
 
 
 export default class Index extends React.Component {

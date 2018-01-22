@@ -5,6 +5,7 @@
     "react/no-danger": "off",
     "class-methods-use-this": "off",
     "no-param-reassign": "off",
+    "no-alert": "off",
     "no-unused-vars": "off",
     "import/no-extraneous-dependencies": "off",
     "import/extensions": "off",
@@ -16,8 +17,10 @@
   },
   "globals": {
     "fetch": true,
-    "document": true
+    "document": true,
+    "alert": true
   },
+  "parser": "babel-eslint",
   "plugins": [
     "jest"
   ]

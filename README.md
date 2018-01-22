@@ -18,6 +18,7 @@
 * [eslint-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ESLINT
 * [Yarn](https://yarnpkg.com/en/) 安裝依賴指令工具
 * [JWT](https://jwt.io/) 使用JWT權限驗證
+* [storybook](https://ithelp.ithome.com.tw/articles/10193515?sc=iThelpR) 視覺化溝通工具
 
 
 ## How to use
@@ -74,6 +75,11 @@ or 自動修復
 $ yarn lint --fix
 ```
 
+- 啟動 storybook
+
+```bash
+$ yarn storybook
+```
 
 
 
@@ -85,6 +91,7 @@ $ yarn lint --fix
 .
 ├── __test__                                    # Jest測試程式位置
 │   └── __snapshots__                           # Jest測試快照
+├── .storybook                                  # storybook (元件開發與檢測)
 ├── pages                                       # 頁面 (選擇使用那個樣版,並在裡面規劃組織+組織)
 ├── src                                         # App source code
 │   ├── components                              # 組件庫
@@ -143,7 +150,7 @@ in .babelrc
 | alias name | real path                  |
 | ---------- | -------------------------- |
 | @atoms     | src/components/atoms       |
-| @templates | src/components/templates   |
+| @layouts | src/components/templates   |
 | @molecules | src/components/molecules   |
 | @organisms | src/components/organisms   |
 | @i18next   | src/i18next                |

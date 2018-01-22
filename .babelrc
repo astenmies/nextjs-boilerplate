@@ -6,7 +6,7 @@
         "es2015",
         "es2017",
         "stage-0"
-      ],
+      ]
     },
     "production": {
       "presets": [
@@ -14,7 +14,7 @@
         "es2015",
         "es2017",
         "stage-0"
-      ],
+      ]
     },
     "test": {
       "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
@@ -28,7 +28,7 @@
         "root": ["./"],
         "alias": {
           "@atoms": "./src/components/atoms",
-          "@templates": "./src/components/templates",
+          "@layouts": "./src/components/layouts",
           "@molecules": "./src/components/molecules",
           "@organisms": "./src/components/organisms",
           "@i18next": "./src/i18next",

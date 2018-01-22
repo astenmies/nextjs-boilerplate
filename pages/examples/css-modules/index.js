@@ -1,5 +1,5 @@
 import React from 'react';
-import Template from '@templates/example';
+import Template from '@layouts/example';
 import Head from 'next/head';
 import {stylesheet, styles} from './index.scss'
 
