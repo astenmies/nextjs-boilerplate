@@ -1,5 +1,5 @@
 import React from 'react';
-import Template from '@templates/example';
+import Template from '@layouts/example';
 import {translate} from 'react-i18next';
 import i18n from '@i18next';
 

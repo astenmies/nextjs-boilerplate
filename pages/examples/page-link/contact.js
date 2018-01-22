@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Template from '@templates/example';
+import Template from '@layouts/example';
 
 
 export default () => (<Template>
