@@ -65,6 +65,17 @@ $ docker-compose logs -f
 $ yarn test
 ```
 
+- 執行ESLINT檢查
+
+```bash
+$ yarn lint
+
+or 自動修復
+$ yarn lint --fix
+```
+
+
+
 
 
 ## App Structure
@@ -369,6 +380,7 @@ JWT使用工具
 - [nextjs-seed](https://github.com/mcmakler/nextjs-seed) 參考ESLINT與IMPORT SCSS Build
 - [React 前端單元測試教學](https://medium.com/@savemuse/react-%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6%E6%95%99%E5%AD%B8-2ccedbe79411) 參考撰寫JEST測試
 * [next.js-example-authentication-with-jwt](https://github.com/trandainhan/next.js-example-authentication-with-jwt) 使用JWT權限驗證
+* [eslint 中文文件](http://eslint.cn)
 
 
 ## Remarks

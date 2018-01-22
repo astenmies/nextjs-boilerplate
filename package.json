@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
     "precommit": "yarn lint",
     "dev": "node ./src/server",
     "build": "next build",
